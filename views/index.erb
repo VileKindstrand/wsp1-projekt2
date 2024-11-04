@@ -7,6 +7,47 @@
     <link rel="stylesheet" type="text/css" href="/style.css?<%=Time.now.to_i%>">
 </head>
 <body>
-  <img src="/img/glhf.png">
+
+  <div id="wrapper">
+
+    <img src="/img/glhf.png">
+    <img src="/img/glhf.png">
+    <img src="/img/glhf.png">
+
+
+    <main>
+
+      <form action="/views/new" method="get">
+        <input type="submit" value="Skapa ny kontakt">
+      </form>
+
+    </main>
+
+    <div id="new_div">
+      <form action="/views/new" method="post">
+        <label>Item <input type="text" name="item_name"></label>
+        <label>description <input type="text" name="item_description"></label>
+        <input type="submit" value="Spara">
+      </form>
+    </div>
+
+    <div id="list_div">
+
+      
+    </div>
+
+    <div>
+
+    </div>
+
+    <div>
+
+    </div>
+
+
+
+
+
+  </div>
 </body>
 </html>

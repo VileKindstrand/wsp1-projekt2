@@ -1,7 +1,13 @@
 body {
   font-family: sans-serif;
-  color: #666;
-  background-color: #f1f1f1;
+  color: saddlebrown;
+  background-color: navajowhite;
   font-size: x-large;
   margin: 1em;
+}
+
+div{
+
+  background-color: burlywood;
+
 }
