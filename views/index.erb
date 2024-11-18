@@ -12,22 +12,38 @@
 
     <img src="/img/glhf.png">
     <img src="/img/glhf.png">
-    <img src="/img/glhf.png">
+
+    <div id="item_list">
+      <ul>
+        <p>här kommer det finnas en lista</p>
+        <% @items.each do |item| %>
+            <div id="item_list_item">
+              <a href="/todo/<%= item['id']%>"><%= item['name'] %></a>
+              <p><%= item['description'] %></p>
+          </div>
+
+        <% end %>
+      </ul>
+
+    </div>
 
 
     <main>
 
       <form action="/views/new" method="get">
-        <input type="submit" value="Skapa ny kontakt">
+        <input type="submit" value="Lägg till bok">
       </form>
 
     </main>
 
     <div id="new_div">
+
       <form action="/views/new" method="post">
         <label>Item <input type="text" name="item_name"></label>
         <label>description <input type="text" name="item_description"></label>
+        <label>priority <input type="number" name="item_priority"></label>
         <input type="submit" value="Spara">
+        
       </form>
     </div>
 
