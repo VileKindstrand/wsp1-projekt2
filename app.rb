@@ -31,8 +31,16 @@ class App < Sinatra::Base
 
         db.execute("INSERT INTO todo (name, description, priority) VALUES(?,?,?)", [name, description, priority])
         redirect("/views")
-
     end
+
+    post '/views/:id/delete' do |id|
+        #hämta id --> delete i sql  utifrån id
+        db.execute("DELETE FROM todo WHERE id=?", id)
+        redirect("/views")
+    end
+    
+
+    
 
     
     

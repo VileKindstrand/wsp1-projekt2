@@ -20,6 +20,15 @@
             <div id="item_list_item">
               <a href="/todo/<%= item['id']%>"><%= item['name'] %></a>
               <p><%= item['description'] %></p>
+
+
+              <form action="/views/<%= item['id']%>/delete" method="post">
+                <label><input type="submit" value="delete"></label>
+              </form>
+
+
+
+              </form>
           </div>
 
         <% end %>
@@ -29,10 +38,6 @@
 
 
     <main>
-
-      <form action="/views/new" method="get">
-        <input type="submit" value="Lägg till bok">
-      </form>
 
     </main>
 
