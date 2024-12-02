@@ -34,7 +34,7 @@ class App < Sinatra::Base
     end
 
     post '/views/:id/delete' do |id|
-        #hämta id --> delete i sql  utifrån id
+        #hämtar id och deletar i databas "todo" där id matchar hämtade id
         db.execute("DELETE FROM todo WHERE id=?", id)
         redirect("/views")
     end
