@@ -8,38 +8,12 @@
 </head>
 <body>
 
+
+
   <div id="wrapper">
 
     <img src="/img/glhf.png">
     <img src="/img/glhf.png">
-
-    <div id="item_list">
-      <ul>
-        <p>här kommer det finnas en lista</p>
-        <% @items.each do |item| %>
-            <div id="item_list_item">
-              <a href="/todo/<%= item['id']%>"><%= item['name'] %></a>
-              <p><%= item['description'] %></p>
-
-
-              <form action="/views/<%= item['id']%>/delete" method="post">
-                <label><input type="submit" value="delete"></label>
-              </form>
-
-
-
-              </form>
-          </div>
-
-        <% end %>
-      </ul>
-
-    </div>
-
-
-    <main>
-
-    </main>
 
     <div id="new_div">
 
@@ -52,10 +26,48 @@
       </form>
     </div>
 
-    <div id="list_div">
+    <div id="item_list">
+      <ul>
+        <p>här kommer det finnas en lista</p>
+        <% @todo_items.each do |item| %>
 
-      
+            <div id="item_list_item">
+
+              <div id="item_list_description">
+
+                <a href="/todo/<%= item['id']%>"><%= item['name'] %></a>
+                <p><%= item['description'] %></p>
+                <p><%= item['priority'] %></p>
+                <form action="/views/<%= item['id']%>/delete" method="post">
+                <label><input type="submit" value="delete"></label>
+
+              </div>
+
+
+
+                <div id="item_list_rating">
+
+                  <form action="/views/<%= item['id']%>/rate" method="post">
+
+                    <p>Finished reading? Rate here!</p>
+                    <label> <p>rating:</p><input type="number" name="rating_number"></label>
+                    <label><p>comments</p><input type="text" name="rating_commment"></label>
+                    <label> <input type="submit" value="submit rating"> </label>
+                    
+                  </form>
+
+                </div>
+
+
+              </form>
+          </div>
+
+        <% end %>
+      </ul>
+
     </div>
+
+
 
     <div>
 
