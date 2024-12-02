@@ -16,11 +16,12 @@ class App < Sinatra::Base
     get '/views' do
         @todo_items = db.execute('SELECT * FROM todo ORDER BY priority ASC')
         erb(:"index")
-    end¨
+    end
     get '/views' do
-        @items = db.execute('SELECT * FROM rate ORDER BY rating ASC')
+        @rate_items = db.execute('SELECT * FROM rate')
         erb(:"index")
     end
+
 
     # get '/views/new' do
     #     erb(:"/new")
@@ -43,11 +44,12 @@ class App < Sinatra::Base
         redirect("/views")
     end
     
-    post '/views/:id/rate' do |id|
-        #hämtar id och deletar i databas "todo" där id matchar hämtade id
-        db.execute("INSERT INTO rated WHERE id=?", id)
-        redirect("/views")
-    end
+    # post '/views/:id/rate' do |id|
+    #     #hämtar id och deletar i databas "todo" där id matchar hämtade id
+    #     db.execute("INSERT INTO rated WHERE id=?", id)
+    #     redirect("/views")
+    # end
+    
 
     
 
